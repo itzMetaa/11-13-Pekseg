@@ -5,7 +5,7 @@ package peksegoop;
  *
  * @author Diak
  */
-public class Peksutemeny implements Arlap{
+public abstract class Peksutemeny implements Arlap{
 
     private double alapAr;
     protected double mennyiseg;
@@ -15,10 +15,17 @@ public class Peksutemeny implements Arlap{
         this.mennyiseg = mennyiseg;
     }
     
+    public abstract void megkostol();
     
     @Override
     public double mennyibeKerul() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return alapAr * mennyiseg;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%f db - %f Ft", mennyiseg, this.mennyibeKerul());
+    }
+    
     
 }
