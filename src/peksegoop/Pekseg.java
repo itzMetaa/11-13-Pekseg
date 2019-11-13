@@ -18,8 +18,13 @@ public class Pekseg {
             BufferedReader br = new BufferedReader(f);
             String sor = br.readLine();
             while(sor!= null){
-                
-                
+                String[] st = sor.split(" ");
+                if (st[0].equals("Pogácsa")) {
+                    menu.add(new Pogacsa(Double.parseDouble(st[1]),Double.parseDouble(st[2])));
+                }
+                else if (st[0].equals("Kávé")){
+                    menu.add(new Kave(st[1].equals("habos")));
+                }
                 sor=br.readLine();
             }
 
@@ -31,5 +36,13 @@ public class Pekseg {
             System.out.println("Valami hiba történt");
         }
         
+    }
+    
+    public void etelLeltar(){
+        for (Arlap item : menu){
+            if (item instanceof Pogacsa) {
+                System.out.println(item);
+            }
+        }
     }
 }
