@@ -1,14 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package peksegoop;
 
 /**
  *
  * @author Diak
  */
-public abstract class Peksutemeny implements Arlap{
+public class Peksutemeny implements Arlap{
+
+    private double alapAr;
+    protected double mennyiseg;
+
+    public Peksutemeny(double alapAr, double mennyiseg) {
+        this.alapAr = alapAr;
+        this.mennyiseg = mennyiseg;
+    }
+    
+    
+    @Override
+    public double mennyibeKerul() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
